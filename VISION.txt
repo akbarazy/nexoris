@@ -1,0 +1,43 @@
+Nama Game: 
+Nexoris
+
+Genre: 
+- Top-down 2.5d
+- Action
+- RPG
+
+Inspirasi:
+- Soul Knight
+- Albion Online
+
+Tujuan: 
+Membuat game RPG pertarungan yang fokus pada farming item, dungeon, boss, dan progression gear.
+
+Teknologi:
+- C++
+- raylib
+- nlohmann/json
+- CMake
+
+Target: 
+Proyek pribadi yang besar dan serius selama semester 3 - semester 8.
+
+Gambaran:
+- game saya hanya akan fokus untuk bertarung seperti soul knight.
+- game saya tidak bisa memilih karakter tidak seperti soul knight.
+- game saya hanya bisa memilih gender laki/perempuan.
+- game saya bisa memilih skin seperti albion, jadi meskipun player sedang memakai armor jelek, tapi tampilan karakter tetap bisa keren dengan fitur skin ini.
+- game saya tidak ada seperti menebang, menambang, atau lainnya tidak seperti albion.
+- game saya hanya bisa farming dari hasil bertarung dan quest (questnya juga bertarung).
+- game saya memiliki item-item untuk membuat/craft senjata, karena tidak semua perlengkapan player bisa didapatkan dari bertarung.
+- game saya senjata, armor, atau perlengkapan lainnya yang digunakan player bisa hancur (perlu repair/perbaikan).
+- game saya memiliki banyak armor dan potion yang bertingkat tidak seperti terraria.
+- game saya memiliki banyak senjata yang bertingkat yang keren sama seperti soul knight ataupun albion.
+- game saya memiliki entity npc sama seperti soul knight ataupun albion.
+- game saya memiliki boss enemy sama seperti soul knight ataupun dungeon pada albion.
+- game saya tidak memiliki fitur upgrade karakter, karena memang tidak ada pilihan karakter.
+- game saya karakter bisa menjadi kuat hanya karena senjata dan armor.
+- game saya memiliki lobby gameplay (bukan menu) seperti soul knight.
+- game saya memiliki 3 role, yaitu fighter, marksman dan mage seperti albion.
+- game saya tiap role memiliki exp/level masing-masing, jadi tidak semua armor dan senjata bisa digunakan jika exp/level di rolenya kurang.
+- game saya membebaskan player untuk memilih rolenya, bahkan player bisa menjadi ahli di setiap role.

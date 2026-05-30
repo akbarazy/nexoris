@@ -1,0 +1,12 @@
+Nexoris MVP 1
+
+Fitur:
+- Player bergerak
+- Enemy muncul
+- Enemy bergerak
+- Player menyerang
+- Enemy menyerang
+- Player kehilangan HP
+- Enemy kehilangan HP
+- Player mati
+- Enemy mati

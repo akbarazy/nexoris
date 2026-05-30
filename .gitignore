@@ -1,24 +1,58 @@
-# Build folder
+# Build
 /build/
-
-# VS Code
-.vscode/
-
-# Executable
-*.exe
-
-# Object files
-*.o
-*.obj
-
-# DLL
-*.dll
+/cmake-build-*/
+/out/
+/bin/
 
 # CMake
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
 Makefile
+compile_commands.json
+CTestTestfile.cmake
 
-# Debug
-*.pdb
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.suo
+*.user
+
+# VS Code
+.vscode/
+
+# Code::Blocks
+*.layout
+*.depend
+
+# CLion
+.idea/
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Object Files
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+
+# Debug Files
+*.log
+
+# Save Files
+saves/
+*.save
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.temp

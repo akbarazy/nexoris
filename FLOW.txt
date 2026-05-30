@@ -1,0 +1,14 @@
+1. Game Start
+2. Create Player
+3. Create Enemy
+4. Game Loop:
+    a. Player Move
+    b. Enemy Move
+    c. Player Attack
+    d. Enemy Attack
+    e. Check Player HP
+    f. Check Enemy HP
+    g. Player Dead?
+        i. Game Over
+    h. Enemy Dead?
+        i. Spawn New Enemy

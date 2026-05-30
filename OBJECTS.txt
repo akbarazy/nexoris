@@ -1,0 +1,24 @@
+Player
+- position
+- speed
+- HP
+- stamina
+- damage
+- alive
+
+Enemy
+- position
+- speed
+- HP
+- damage
+- alive
+
+Weapon
+- id
+- name
+- damage
+- stamina cost
+
+Game
+- player
+- enemy
