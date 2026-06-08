@@ -8,9 +8,11 @@ void Game::Run()
 
     while (!WindowShouldClose())
     {
+        player.Update();
+
         BeginDrawing();
         ClearBackground(BLACK);
-        DrawText("NEXORIS", 500, 350, 40, WHITE);
+        player.Draw();
         EndDrawing();
     }
 

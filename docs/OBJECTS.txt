@@ -1,9 +1,25 @@
+Game
+Properti:
+- map
+- player
+Fungsi:
+- run
+
+Map
+Properti:
+- texture
+- collision objects
+Fungsi:
+- load
+- draw
+
 Player
-- HP
-- speed
-- alive
-- damage
-- stamina
+Properti:
 - position
-- current direction
-- last horizontal direction
+- speed
+- hitbox
+Fungsi:
+- update
+- draw
+- move
+- check collision

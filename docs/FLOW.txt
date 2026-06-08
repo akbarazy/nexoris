@@ -1,0 +1,10 @@
+(main.cpp) membuat objek game.
+(main.cpp) memanggil method game yaitu run.
+    (game.cpp) membuat window yang akan tampil.
+    (game.cpp) mengatur fps game yang digunakan.
+    (game.cpp) melakukan perulangan (looping) selama window tidak ditutup.
+        (game.cpp) memulai proses render/gambar.
+        (game.cpp) menghapus/membersihkan background dengan warna hitam.
+        (game.cpp) menggambar teks "NEXORIS".
+        (game.cpp) mengakhiri proses render/gambar.
+    (game.cpp) menutup window game.

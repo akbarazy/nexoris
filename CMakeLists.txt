@@ -4,7 +4,8 @@ set(CMAKE_CXX_STANDARD 17)
 add_subdirectory(external/raylib)
 add_executable(Nexoris
     src/main.cpp
-    src/core/Game.cpp
+    src/core/game.cpp
+    src/entities/player.cpp
 )
 target_link_libraries(Nexoris raylib)
 target_include_directories(Nexoris PRIVATE include)
