@@ -1,0 +1,9 @@
+Player
+- HP
+- speed
+- alive
+- damage
+- stamina
+- position
+- current direction
+- last horizontal direction

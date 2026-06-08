@@ -1,16 +1,24 @@
-# Build
+# Build Directories
 /build/
 /cmake-build-*/
 /out/
 /bin/
 
-# CMake
+# CMake Temporary & Cache Files
 CMakeCache.txt
 CMakeFiles/
+CMakeUserPresets.json
 cmake_install.cmake
 Makefile
 compile_commands.json
 CTestTestfile.cmake
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
 # Visual Studio
 .vs/
@@ -18,41 +26,47 @@ CTestTestfile.cmake
 *.suo
 *.user
 
-# VS Code
-.vscode/
+# CLion / IntelliJ
+.idea/
+*.iws
 
 # Code::Blocks
 *.layout
 *.depend
 
-# CLion
-.idea/
+# Compilations & Object Files
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exp
+*.ilk
+*.pdb
 
 # Executables
 *.exe
 *.out
 *.app
 
-# Object Files
-*.o
-*.obj
-*.a
-*.lib
-*.dll
-*.so
-*.dylib
+# Package Managers (jika digunakan nanti)
+/vcpkg_installed/
+.conan/
 
-# Debug Files
-*.log
-
-# Save Files
-saves/
-*.save
-
-# OS Files
+# Operating System Files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Temporary
+# Logs and Temporary files
+*.log
 *.tmp
 *.temp
+*.swp
+*~
+
+# Game Save Files / Test Saves
+saves/
+*.save

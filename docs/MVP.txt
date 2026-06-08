@@ -1,0 +1,4 @@
+Fitur 1:
+- Map muncul
+- Player bergerak
+- Player memiliki collision
