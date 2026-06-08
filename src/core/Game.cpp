@@ -12,7 +12,10 @@ void Game::Run()
 
         BeginDrawing();
         ClearBackground(BLACK);
+
+        map.Draw();
         player.Draw();
+        
         EndDrawing();
     }
 

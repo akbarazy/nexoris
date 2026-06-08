@@ -6,6 +6,7 @@ add_executable(Nexoris
     src/main.cpp
     src/core/game.cpp
     src/entities/player.cpp
+    src/world/map.cpp
 )
 target_link_libraries(Nexoris raylib)
 target_include_directories(Nexoris PRIVATE include)
