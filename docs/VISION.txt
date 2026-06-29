@@ -16,7 +16,7 @@ Membuat game RPG pertarungan yang fokus pada farming item, dungeon, boss, dan pr
 Teknologi:
 - C++
 - raylib
-- nlohmann/json
+- nlohmann
 - CMake
 
 Target: 

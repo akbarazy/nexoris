@@ -2,3 +2,7 @@ Fitur 1:
 - Map muncul
 - Player bergerak
 - Player memiliki collision
+
+Fitur 2:
+- ukuran window game dibuat menjadi fullscreen
+- resolusi game tetap berukuran 1280x720
