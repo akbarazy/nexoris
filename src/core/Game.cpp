@@ -4,11 +4,13 @@
 
 void Game::Run()
 {
+    SetConfigFlags(FLAG_WINDOW_UNDECORATED);
     InitWindow(GAME_WIDTH, GAME_HEIGHT, "Nexoris");
     
     int monitor = GetCurrentMonitor();
     SetWindowSize(GetMonitorWidth(monitor), GetMonitorHeight(monitor));
-    ToggleFullscreen();
+    SetWindowPosition(0, 0);
+
     
     SetTargetFPS(60);
 
