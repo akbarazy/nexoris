@@ -4,5 +4,6 @@ Fitur 1:
 - Player memiliki collision
 
 Fitur 2:
-- ukuran window game dibuat menjadi fullscreen
-- resolusi game tetap berukuran 1280x720
+- [x] ukuran window game dibuat menjadi fullscreen
+- [x] pengguna tetap bisa membuka layar desktop
+- [x] resolusi game tetap berukuran 1280x720
