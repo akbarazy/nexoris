@@ -5,6 +5,7 @@ add_subdirectory(external/raylib)
 add_executable(Nexoris
     src/main.cpp
     src/core/game.cpp
+    src/core/camera.cpp
     src/entities/player.cpp
     src/world/map.cpp
 )

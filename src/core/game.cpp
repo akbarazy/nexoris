@@ -2,7 +2,7 @@
 #include "raylib.h"
 #include <algorithm>
 
-Game::Game()
+Game::Game() : gameCamera(RENDER_WIDTH, RENDER_HEIGHT)
 {
     SetConfigFlags(FLAG_WINDOW_UNDECORATED);
     InitWindow(GAME_WIDTH, GAME_HEIGHT, "Nexoris");
@@ -18,11 +18,7 @@ Game::Game()
     canvas = LoadRenderTexture(RENDER_WIDTH, RENDER_HEIGHT);
     SetTextureFilter(canvas.texture, TEXTURE_FILTER_POINT);
 
-    camera = { 0 };
-    camera.target = player.GetCenter();
-    camera.offset = { RENDER_WIDTH / 2.0f, RENDER_HEIGHT / 2.0f };
-    camera.rotation = 0.0f;
-    camera.zoom = 1.0f;
+    gameCamera.SnapToTarget(player.GetCenter());
 }
 
 Game::~Game()
@@ -35,23 +31,21 @@ void Game::Update()
 {
     player.Update(map);
 
-    camera.target = player.GetCenter();
+    gameCamera.SetTargetPosition(player.GetCenter());
 
     float wheel = GetMouseWheelMove();
     if (wheel != 0)
     {
-        camera.zoom += wheel * 0.125f;
-        if (camera.zoom < 1.0f) camera.zoom = 1.0f;
-        if (camera.zoom > 2.5f) camera.zoom = 2.5f;
+        gameCamera.AddZoom(wheel * 0.125f);
     }
+    
+    gameCamera.Update(GetFrameTime());
 }
 
 void Game::Draw()
 {
-    BeginMode2D(camera);
     map.Draw();
     player.Draw();
-    EndMode2D();
 }
 
 // menggambar canvas ke layar
@@ -100,8 +94,11 @@ void Game::Run()
         BeginTextureMode(canvas);
         ClearBackground(BLACK);
 
-        Draw();
+        BeginMode2D(gameCamera.GetRaylibCamera());
 
+        Draw();
+        
+        EndMode2D();
         EndTextureMode();
 
         Render();

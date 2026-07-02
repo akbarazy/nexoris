@@ -1,12 +1,13 @@
 #pragma once
 #include "entities/player.hpp"
 #include "world/map.hpp"
+#include "core/camera.hpp"
 
 class Game
 {
 private:
     RenderTexture2D canvas;
-    Camera2D camera;
+    GameCamera gameCamera;
     Player player;
     Map map;
 
