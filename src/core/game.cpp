@@ -27,7 +27,7 @@ Game::~Game()
 
 void Game::Update()
 {
-    player.Update();
+    player.Update(map);
 }
 
 void Game::Draw()

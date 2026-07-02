@@ -2,9 +2,19 @@
 (main.cpp) memanggil method game yaitu run.
     (game.cpp) membuat window yang akan tampil.
     (game.cpp) mengatur fps game yang digunakan.
-    (game.cpp) melakukan perulangan (looping) selama window tidak ditutup.
-        (game.cpp) memulai proses render/gambar.
-        (game.cpp) menghapus/membersihkan background dengan warna hitam.
-        (game.cpp) menggambar teks "NEXORIS".
-        (game.cpp) mengakhiri proses render/gambar.
+    (game.cpp) menginisialisasi objek player dan map.
+    (game.cpp) melakukan perulangan selama window tidak ditutup.
+        (game.cpp) memanggil method player yaitu update dengan mengirimkan referensi objek map.
+            (player.cpp) memproses input keyboard untuk bergerak.
+            (player.cpp) memperbarui posisi dan hitbox player.
+            (player.cpp) memanggil fungsi untuk mengecek apakah terjadi tabrakan atau tidak.
+                (player.cpp) melakukan perulangan untuk mencari tabrakan terjadi di objek yang mana.
+                    (player.cpp) memperbarui posisi dan hitbox player jika terjadi tabrakan.
+        (game.cpp) memulai proses render gambar.
+        (game.cpp) menghapus atau membersihkan background dengan warna hitam.
+        (game.cpp) memanggil method map yaitu draw.
+            (map.cpp) menggambar dunia dan setiap objek.
+        (game.cpp) memanggil method player yaitu draw.
+            (player.cpp) menggambar player sebagai kotak.
+        (game.cpp) mengakhiri proses render gambar.
     (game.cpp) menutup window game.

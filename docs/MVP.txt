@@ -1,7 +1,7 @@
 Fitur 1:
-- Map muncul
-- Player bergerak
-- Player memiliki collision
+- map muncul
+- player bergerak
+- player bisa menabrak objek didalam map
 
 Fitur 2:
 - [x] ukuran window game dibuat menjadi fullscreen

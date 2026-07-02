@@ -1,7 +1,7 @@
 Game
 Properti:
-- map
 - player
+- map
 - game width
 - game height
 Fungsi:
@@ -9,11 +9,12 @@ Fungsi:
 
 Map
 Properti:
-- texture
-- collision objects
+- area
+- objects
 Fungsi:
-- load
 - draw
+- get area
+- get objects
 
 Player
 Properti:
