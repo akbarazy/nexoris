@@ -68,3 +68,11 @@ void Player::Draw()
 {
     DrawRectangleRec(hitbox, BLUE);
 }
+
+Vector2 Player::GetCenter() const
+{
+    return { 
+        position.x + hitbox.width / 2.0f, 
+        position.y + hitbox.height / 2.0f 
+    };
+}

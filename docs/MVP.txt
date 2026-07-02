@@ -4,6 +4,12 @@ Fitur 1:
 - player bisa menabrak objek didalam map
 
 Fitur 2:
-- [x] ukuran window game dibuat menjadi fullscreen
-- [x] pengguna tetap bisa membuka layar desktop
-- [x] resolusi game tetap berukuran 1280x720
+- ukuran window game dibuat menjadi fullscreen
+- pengguna tetap bisa membuka layar desktop
+- resolusi game tetap berukuran 1280x720
+
+Fitur 3:
+- buat map yang fix dengan ukuran yang lebih besar dari ukuran canvas
+- camera mengikuti player dan player akan selalu berada ditengah
+- hanya render texture yang berada di 1920x1080 dari camera
+- bisa zoom in dan zoom out

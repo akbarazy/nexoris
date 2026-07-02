@@ -14,9 +14,15 @@ Game::Game()
 
     SetTargetFPS(60);
 
-    // membuat canvas supaya resolusi game tidak berubah saat resolusi monitor berubah
-    canvas = LoadRenderTexture(GAME_WIDTH, GAME_HEIGHT);
+    // membuat canvas supaya resolusi game tidak berubah disetiap resolusi monitor
+    canvas = LoadRenderTexture(RENDER_WIDTH, RENDER_HEIGHT);
     SetTextureFilter(canvas.texture, TEXTURE_FILTER_POINT);
+
+    camera = { 0 };
+    camera.target = player.GetCenter();
+    camera.offset = { RENDER_WIDTH / 2.0f, RENDER_HEIGHT / 2.0f };
+    camera.rotation = 0.0f;
+    camera.zoom = 1.0f;
 }
 
 Game::~Game()
@@ -28,22 +34,43 @@ Game::~Game()
 void Game::Update()
 {
     player.Update(map);
+
+    camera.target = player.GetCenter();
+
+    float wheel = GetMouseWheelMove();
+    if (wheel != 0)
+    {
+        camera.zoom += wheel * 0.125f;
+        if (camera.zoom < 1.0f) camera.zoom = 1.0f;
+        if (camera.zoom > 2.5f) camera.zoom = 2.5f;
+    }
 }
 
 void Game::Draw()
 {
+    BeginMode2D(camera);
     map.Draw();
     player.Draw();
+    EndMode2D();
 }
 
+// menggambar canvas ke layar
 void Game::Render()
 {
-    // menggambar canvas ke layar
     BeginDrawing();
     ClearBackground(BLACK);
 
-    float scale = std::min((float)GetScreenWidth() / GAME_WIDTH, (float)GetScreenHeight() / GAME_HEIGHT);
-    Rectangle source = { 0.0f, 0.0f, (float)canvas.texture.width, (float)-canvas.texture.height };
+    float scale = std::min(
+        (float)GetScreenWidth() / GAME_WIDTH, 
+        (float)GetScreenHeight() / GAME_HEIGHT
+    );
+    
+    Rectangle source = { 
+        (RENDER_WIDTH - GAME_WIDTH) * 0.5f, 
+        (RENDER_HEIGHT - GAME_HEIGHT) * 0.5f, 
+        (float)GAME_WIDTH, 
+        (float)-GAME_HEIGHT 
+    };
 
     // menghitung posisi canvas agar center dan membuat ukuran canvas menjadi contain
     Rectangle dest = { 
@@ -62,7 +89,6 @@ void Game::Run()
 {
     while (!WindowShouldClose())
     {
-        // window akan minimize saat membuka window lain
         if (!IsWindowFocused() && !IsWindowMinimized())
         {
             MinimizeWindow();

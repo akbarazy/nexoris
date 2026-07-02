@@ -23,4 +23,5 @@ public:
     Player();
     void Update(Map& map);
     void Draw();
+    Vector2 GetCenter() const;
 };
