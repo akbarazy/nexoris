@@ -1,0 +1,15 @@
+Feature 1 (Setup):
+- map muncul
+- player bergerak
+- player bisa menabrak objek didalam map
+
+Feature 2 (Window):
+- ukuran window game dibuat menjadi fullscreen
+- pengguna tetap bisa membuka layar desktop
+- resolusi game tetap berukuran 1280x720
+
+Feature 3 (Camera):
+- buat map yang fix dengan ukuran yang lebih besar dari ukuran canvas
+- camera mengikuti player dan player akan selalu berada ditengah
+- hanya render texture yang berada di 1920x1080 dari camera
+- bisa zoom in dan zoom out

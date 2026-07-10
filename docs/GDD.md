@@ -39,3 +39,25 @@ Pemain dapat memakai "Skin" yang akan menggantikan visual atau *sprite* karakter
 ### C. Konsumsi & Material
 - **Material Crafting**: Gigi Monster, Kulit Serigala, Inti Sihir, Besi Rongsokan, Kristal Bos.
 - **Potion Bertingkat**: Minor/Major Health, Mana Potion, Stamina Potion.
+
+### D. Sistem Kelangkaan Item (Rarity)
+Menentukan stat pengali (*stat multiplier*), harga jual, dan kemungkinan mendapatkan efek khusus/pasif tambahan:
+1. **Common** (Abu-abu)
+2. **Uncommon** (Hijau)
+3. **Rare** (Biru)
+4. **Epic** (Ungu)
+5. **Legendary** (Emas Oranye)
+6. **Mythic** (Merah Bercahaya)
+7. **Celestial** (Biru Muda Bercahaya / Cyan)
+8. **Divine** (Putih Terang / Emas Putih)
+
+### E. Tingkat Kesulitan Dungeon (Difficulty)
+Menentukan pengali HP/Damage musuh, kepadatan musuh, serta kualitas jaminan barang jatuh (*Loot Table guarantee*):
+1. **Easy**
+2. **Normal**
+3. **Hard**
+4. **Expert**
+5. **Extreme**
+6. **Insane**
+7. **Nightmare**
+8. **Extinction**
