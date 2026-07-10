@@ -20,6 +20,13 @@ add_executable(Nexoris
     src/engine/core/asset_manager.cpp
     src/engine/events/event_manager.cpp
     
+    src/engine/ecs/player_control_system.cpp
+    src/engine/ecs/movement_system.cpp
+    src/engine/ecs/collision_system.cpp
+    src/engine/ecs/render_system.cpp
+    src/engine/ecs/camera_system.cpp
+    src/game/factories/entity_factory.cpp
+    
     # Old game files (disabled temporarily for architectural refactoring)
     # src/core/game.cpp
     # src/core/camera.cpp
