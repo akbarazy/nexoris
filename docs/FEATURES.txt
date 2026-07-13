@@ -1,7 +1,7 @@
 Feature 1 (Setup):
-- map muncul
-- player bergerak
-- player bisa menabrak objek didalam map
+- map muncul dengan tile kotak 16x16
+- player muncul dengan sprite kotak 32x32
+- player bergerak dan bisa menabrak objek didalam map
 
 Feature 2 (Window):
 - ukuran window game dibuat menjadi fullscreen
