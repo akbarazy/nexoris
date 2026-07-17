@@ -1,19 +1,17 @@
 #include <raylib.h>
 #include "core/game.hpp"
+#include "systems/render_system.hpp"
 
-Game::Game() {}
+Game::Game() {
+    Asset::Init();
+}
 
 Game::~Game()
 {
+    Asset::Close();
     UnloadRenderTexture(screen.canvas);
     CloseWindow();
 }
-
-void Game::Update() {
-    float dt = GetFrameTime();
-}
-
-void Game::Render() {}
 
 void Game::Run()
 {
@@ -33,4 +31,12 @@ void Game::Run()
 
         screen.Render();
     }
+}
+
+void Game::Update() {
+    float dt = GetFrameTime();
+}
+
+void Game::Render() {
+    RenderSystem::Draw(registry);
 }

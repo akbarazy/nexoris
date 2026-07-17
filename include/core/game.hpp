@@ -4,6 +4,7 @@
 #include <entt/entt.hpp>
 #include <memory>
 #include "core/screen.hpp"
+#include "core/asset.hpp"
 
 class Game {
 public:
