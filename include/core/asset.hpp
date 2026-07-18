@@ -18,28 +18,27 @@ public:
         int positionY;
         int width = 1;
         int height = 1;
-        int sourceSize = SPRITE_SIZE;
+        int size;
     };
 
     struct Display {
         Vector2 position;
-        int size = SPRITE_SIZE;
         Vector2 offset = {0, 0};
         Vector2 origin = {0, 0};
         float rotation = 0.0f;
         Color tint = WHITE;
         bool flip = false;
+        int size;
     };
 
-    static constexpr int SPRITE_SIZE = 32;
-    static constexpr int TILE_SIZE = 16;
+    static constexpr int FRAME_32 = 32;
+    static constexpr int FRAME_16 = 16;
     static constexpr int FRAME_GAP = 4;
     static constexpr int MAX_TEXTURES = 8;
 
     static void Init();
     static void Close();
     static const Frame& GetFrame(entt::id_type id);
-    static void DrawFrame(const Frame& frame, const Display& display);
     static void DrawFrame(entt::id_type id, const Display& display);
 
 private:

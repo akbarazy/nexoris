@@ -30,13 +30,27 @@ void Asset::LoadTexture(Slot slot, const char* path) {
 }
 
 void Asset::RegisterFrames() {
-    loadedFrames["tile_grass"_hs] = { TILESET_MAPS_1, 0, 0, 1, 1, TILE_SIZE };
-    loadedFrames["tile_dirt"_hs]  = { TILESET_MAPS_1, 1, 0, 1, 1, TILE_SIZE };
-    
-    loadedFrames["player_idle_1"_hs] = { SPRITESHEET_PLAYER_1, 0, 0, 1, 1, SPRITE_SIZE };
-    loadedFrames["player_idle_2"_hs] = { SPRITESHEET_PLAYER_1, 1, 0, 1, 1, SPRITE_SIZE };
-    
-    loadedFrames["effect_explosion"_hs] = { SPRITESHEET_EFFECTS_1, 0, 0, 1, 1, SPRITE_SIZE };
+    loadedFrames["gate_ceil_1"_hs] = { TILESET_MAPS_1, 0, 0, 1, 1, FRAME_16 };
+    loadedFrames["gate_half_1"_hs]  = { TILESET_MAPS_1, 1, 0, 1, 1, FRAME_16 };
+    loadedFrames["gate_full_1"_hs]  = { TILESET_MAPS_1, 2, 0, 1, 1, FRAME_16 };
+    loadedFrames["woodenWall_full_1"_hs]  = { TILESET_MAPS_1, 3, 0, 1, 1, FRAME_16 };
+    loadedFrames["woodenWall_ceil_1"_hs]  = { TILESET_MAPS_1, 4, 0, 1, 1, FRAME_16 };
+    loadedFrames["mapName_floor_1"_hs]  = { TILESET_MAPS_1, 5, 0, 1, 1, FRAME_16 };
+    loadedFrames["mapName_floor_2"_hs]  = { TILESET_MAPS_1, 6, 0, 1, 1, FRAME_16 };
+    loadedFrames["mapName_background"_hs]  = { TILESET_MAPS_1, 7, 0, 1, 1, FRAME_16 };
+    loadedFrames["mapName_floor_3"_hs]  = { TILESET_MAPS_1, 8, 0, 1, 1, FRAME_16 };
+    loadedFrames["mapName_floor_4"_hs]  = { TILESET_MAPS_1, 9, 0, 1, 1, FRAME_16 };
+    loadedFrames["commonChest_full"_hs]  = { TILESET_MAPS_1, 0, 1, 1, 1, FRAME_16 };
+    loadedFrames["commonChestClosed_ceil"_hs]  = { TILESET_MAPS_1, 1, 1, 1, 1, FRAME_16 };
+    loadedFrames["commonChestOpen_ceil"_hs]  = { TILESET_MAPS_1, 2, 1, 1, 1, FRAME_16 };
+    loadedFrames["stoneBlock_full_1"_hs]  = { TILESET_MAPS_1, 3, 1, 1, 1, FRAME_16 };
+    loadedFrames["stoneBlock_ceil_2"_hs]  = { TILESET_MAPS_1, 4, 1, 1, 1, FRAME_16 };
+
+    loadedFrames["male_unarmed_idle_1"_hs]  = { SPRITESHEET_PLAYER_1, 0, 0, 1, 1, FRAME_32 };
+    loadedFrames["male_unarmed_idle_2"_hs]  = { SPRITESHEET_PLAYER_1, 1, 0, 1, 1, FRAME_32 };
+    loadedFrames["playerShadow"_hs]  = { SPRITESHEET_EFFECTS_1, 0, 0, 1, 1, FRAME_32 };
+    loadedFrames["enemyShadow"_hs]  = { SPRITESHEET_EFFECTS_1, 1, 0, 1, 1, FRAME_32 };
+    loadedFrames["npcShadow"_hs]  = { SPRITESHEET_EFFECTS_1, 2, 0, 1, 1, FRAME_32 };
 }
 
 const Asset::Frame& Asset::GetFrame(entt::id_type id) {
@@ -45,16 +59,18 @@ const Asset::Frame& Asset::GetFrame(entt::id_type id) {
         return it->second;
     }
 
-    static const Frame fallback = { TILESET_MAPS_1, 0, 0, 1, 1, TILE_SIZE };
+    static const Frame fallback = { TILESET_MAPS_1, 0, 0, 1, 1, FRAME_16 };
     return fallback;
 }
 
-void Asset::DrawFrame(const Frame& frame, const Display& display) {
+void Asset::DrawFrame(entt::id_type id, const Display& display) {
+    const Frame& frame = GetFrame(id);
+
     Rectangle src = {
-        (float)(frame.positionX * (frame.sourceSize + FRAME_GAP)),
-        (float)(frame.positionY * (frame.sourceSize + FRAME_GAP)),
-        (float)(frame.width * frame.sourceSize),
-        (float)(frame.height * frame.sourceSize)
+        (float)(frame.positionX * (frame.size + FRAME_GAP)),
+        (float)(frame.positionY * (frame.size + FRAME_GAP)),
+        (float)(frame.width * frame.size),
+        (float)(frame.height * frame.size)
     };
     
     if (display.flip) {
@@ -69,8 +85,4 @@ void Asset::DrawFrame(const Frame& frame, const Display& display) {
     };
     
     DrawTexturePro(textures[frame.texture], src, dest, display.origin, display.rotation, display.tint);
-}
-
-void Asset::DrawFrame(entt::id_type id, const Display& display) {
-    DrawFrame(GetFrame(id), display);
 }
