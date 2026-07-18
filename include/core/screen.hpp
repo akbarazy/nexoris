@@ -9,5 +9,6 @@ public:
     RenderTexture2D canvas;
 
     Screen();
+    ~Screen();
     void Render();
 };

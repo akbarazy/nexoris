@@ -34,3 +34,8 @@ void Screen::Render() {
 
     EndDrawing();
 }
+
+Screen::~Screen() {
+    UnloadRenderTexture(canvas);
+    CloseWindow();
+}

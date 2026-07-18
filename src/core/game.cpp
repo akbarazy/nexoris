@@ -9,8 +9,6 @@ Game::Game() {
 Game::~Game()
 {
     Asset::Close();
-    UnloadRenderTexture(screen.canvas);
-    CloseWindow();
 }
 
 void Game::Run()
