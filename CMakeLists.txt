@@ -13,9 +13,8 @@ FetchContent_MakeAvailable(entt)
 
 add_subdirectory(external/raylib)
 
-add_executable(Nexoris
-    src/main.cpp
-)
+file(GLOB_RECURSE SOURCES src/*.cpp)
+add_executable(Nexoris ${SOURCES})
 
 target_link_libraries(Nexoris PRIVATE raylib EnTT::EnTT)
 target_include_directories(Nexoris PRIVATE include)

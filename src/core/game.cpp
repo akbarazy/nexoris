@@ -1,6 +1,6 @@
 #include <raylib.h>
 #include "core/game.hpp"
-#include "systems/render_system.hpp"
+#include "systems/render.hpp"
 
 Game::Game() {
     Asset::Init();
@@ -23,11 +23,11 @@ void Game::Run()
         BeginTextureMode(screen.canvas);
         ClearBackground(BLACK);
 
-        Render();
+        Draw();
 
         EndTextureMode();
 
-        screen.Render();
+        screen.Draw();
     }
 }
 
@@ -35,6 +35,6 @@ void Game::Update() {
     float dt = GetFrameTime();
 }
 
-void Game::Render() {
-    RenderSystem::Draw(registry);
+void Game::Draw() {
+    Render::Draw(registry);
 }

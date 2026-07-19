@@ -17,5 +17,5 @@ private:
     Screen screen;
 
     void Update();
-    void Render();
+    void Draw();
 };
