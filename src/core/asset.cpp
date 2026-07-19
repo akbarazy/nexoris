@@ -7,11 +7,11 @@ Texture2D Asset::textures[Asset::MAX_TEXTURES] = {0};
 std::unordered_map<entt::id_type, Asset::Frame> Asset::loadedFrames;
 
 void Asset::Init() {
-    LoadTexture(TILESET_MAPS_1, "assets/textures/tiles/maps_1.png");
-    LoadTexture(SPRITESHEET_PLAYER_1, "assets/textures/sprites/player_1.png");
-    LoadTexture(SPRITESHEET_EFFECTS_1, "assets/textures/sprites/effects_1.png");
+    Load(TILESET_MAPS_1, "assets/textures/tiles/maps_1.png");
+    Load(SPRITESHEET_PLAYER_1, "assets/textures/sprites/player_1.png");
+    Load(SPRITESHEET_EFFECTS_1, "assets/textures/sprites/effects_1.png");
     
-    RegisterFrames();
+    Register();
 }
 
 void Asset::Close() {
@@ -23,13 +23,13 @@ void Asset::Close() {
     }
 }
 
-void Asset::LoadTexture(Slot slot, const char* path) {
+void Asset::Load(Slot slot, const char* path) {
     Image img = LoadImage(path);
     textures[slot] = LoadTextureFromImage(img);
     UnloadImage(img);
 }
 
-void Asset::RegisterFrames() {
+void Asset::Register() {
     loadedFrames["gate_ceil_1"_hs] = { TILESET_MAPS_1, 0, 0, 1, 1, FRAME_16 };
     loadedFrames["gate_half_1"_hs]  = { TILESET_MAPS_1, 1, 0, 1, 1, FRAME_16 };
     loadedFrames["gate_full_1"_hs]  = { TILESET_MAPS_1, 2, 0, 1, 1, FRAME_16 };
@@ -53,7 +53,7 @@ void Asset::RegisterFrames() {
     loadedFrames["npcShadow"_hs]  = { SPRITESHEET_EFFECTS_1, 2, 0, 1, 1, FRAME_32 };
 }
 
-const Asset::Frame& Asset::GetFrame(entt::id_type id) {
+const Asset::Frame& Asset::Get(entt::id_type id) {
     auto it = loadedFrames.find(id);
     if (it != loadedFrames.end()) {
         return it->second;
@@ -63,8 +63,8 @@ const Asset::Frame& Asset::GetFrame(entt::id_type id) {
     return fallback;
 }
 
-void Asset::DrawFrame(entt::id_type id, const Display& display) {
-    const Frame& frame = GetFrame(id);
+void Asset::Draw(entt::id_type id, const Display& display) {
+    const Frame& frame = Get(id);
 
     Rectangle src = {
         (float)(frame.positionX * (frame.size + FRAME_GAP)),

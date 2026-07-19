@@ -10,5 +10,5 @@ public:
 
     Screen();
     ~Screen();
-    void Render();
+    void Draw();
 };

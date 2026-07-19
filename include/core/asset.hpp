@@ -38,13 +38,13 @@ public:
 
     static void Init();
     static void Close();
-    static const Frame& GetFrame(entt::id_type id);
-    static void DrawFrame(entt::id_type id, const Display& display);
+    static const Frame& Get(entt::id_type id);
+    static void Draw(entt::id_type id, const Display& display);
 
 private:
     static Texture2D textures[MAX_TEXTURES];
     static std::unordered_map<entt::id_type, Frame> loadedFrames;
 
-    static void LoadTexture(Slot slot, const char* path);
-    static void RegisterFrames();
+    static void Load(Slot slot, const char* path);
+    static void Register();
 };

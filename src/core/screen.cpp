@@ -16,7 +16,12 @@ Screen::Screen() {
     SetTextureFilter(canvas.texture, TEXTURE_FILTER_POINT);
 }
 
-void Screen::Render() {
+Screen::~Screen() {
+    UnloadRenderTexture(canvas);
+    CloseWindow();
+}
+
+void Screen::Draw() {
     BeginDrawing();
     ClearBackground(BLACK);
 
@@ -33,9 +38,4 @@ void Screen::Render() {
     DrawTexturePro(canvas.texture, source, dest, { 0.0f, 0.0f }, 0.0f, WHITE);
 
     EndDrawing();
-}
-
-Screen::~Screen() {
-    UnloadRenderTexture(canvas);
-    CloseWindow();
 }
