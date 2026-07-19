@@ -1,10 +1,9 @@
 #pragma once
 
-#include <raylib.h>
-#include <string>
+#include <entt/entt.hpp>
 
 struct Sprite {
-    std::string textureId;
-    Rectangle srcRect = {0.0f, 0.0f, 32.0f, 32.0f};
-    int zOrder = 0;
+    entt::id_type frameId;
+    bool flip = false;
+    int zIndex = 0;
 };
