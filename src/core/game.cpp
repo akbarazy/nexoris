@@ -1,9 +1,11 @@
 #include <raylib.h>
 #include "core/game.hpp"
 #include "systems/render.hpp"
+#include "systems/spawn.hpp"
 
 Game::Game() {
     Asset::Init();
+    Spawn::TestScene(registry);
 }
 
 Game::~Game()
@@ -36,5 +38,5 @@ void Game::Update() {
 }
 
 void Game::Draw() {
-    Render::Draw(registry);
+    Render::DrawTestScene(registry);
 }
