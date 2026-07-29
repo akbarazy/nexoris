@@ -3,5 +3,5 @@
 #include <entt/entt.hpp>
 
 namespace Spawn {
-    void TestScene(entt::registry& registry);
+    void Init(entt::registry& registry);
 }

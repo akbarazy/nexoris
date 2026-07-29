@@ -40,10 +40,10 @@ void Asset::Register() {
     loadedFrames["mapName_background"_hs]  = { TILESET_MAPS_1, 7, 0, 1, 1, FRAME_16 };
     loadedFrames["mapName_floor_3"_hs]  = { TILESET_MAPS_1, 8, 0, 1, 1, FRAME_16 };
     loadedFrames["mapName_floor_4"_hs]  = { TILESET_MAPS_1, 9, 0, 1, 1, FRAME_16 };
-    loadedFrames["commonChest_full"_hs]  = { TILESET_MAPS_1, 0, 1, 1, 1, FRAME_16 };
+    loadedFrames["commonChest_half"_hs]  = { TILESET_MAPS_1, 0, 1, 1, 1, FRAME_16 };
     loadedFrames["commonChestClosed_ceil"_hs]  = { TILESET_MAPS_1, 1, 1, 1, 1, FRAME_16 };
     loadedFrames["commonChestOpen_ceil"_hs]  = { TILESET_MAPS_1, 2, 1, 1, 1, FRAME_16 };
-    loadedFrames["stoneBlock_full_1"_hs]  = { TILESET_MAPS_1, 3, 1, 1, 1, FRAME_16 };
+    loadedFrames["stoneBlock_half_1"_hs]  = { TILESET_MAPS_1, 3, 1, 1, 1, FRAME_16 };
     loadedFrames["stoneBlock_ceil_2"_hs]  = { TILESET_MAPS_1, 4, 1, 1, 1, FRAME_16 };
 
     loadedFrames["male_unarmed_idle_1"_hs]  = { SPRITESHEET_PLAYER_1, 0, 0, 1, 1, FRAME_32 };
@@ -84,5 +84,12 @@ void Asset::Draw(entt::id_type id, const Display& display) {
         (float)(frame.height * display.size)
     };
     
-    DrawTexturePro(textures[frame.texture], src, dest, display.origin, display.rotation, display.tint);
+    DrawTexturePro(
+        textures[frame.texture], 
+        src, 
+        dest, 
+        display.origin, 
+        display.rotation, 
+        display.tint
+    );
 }

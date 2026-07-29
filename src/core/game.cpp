@@ -5,7 +5,7 @@
 
 Game::Game() {
     Asset::Init();
-    Spawn::TestScene(registry);
+    Spawn::Init(registry);
 }
 
 Game::~Game()
@@ -38,5 +38,5 @@ void Game::Update() {
 }
 
 void Game::Draw() {
-    Render::DrawTestScene(registry);
+    Render::DrawPrototype(registry);
 }
